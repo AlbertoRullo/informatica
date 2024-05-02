@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quadrati con numeri casuali</title>
+<style>
+  .quadrato {
+    width: 50px;
+    height: 50px;
+    border: 1px solid black;
+    display: inline-block;
+    text-align: center;
+    line-height: 50px;
+  }
+</style>
+</head>
+<body>
+<div id="container">
+
+</div>
+
+<script>
+  
+  var numeriCasuali = [];
+  for (var i = 0; i < 100; i++) {
+    numeriCasuali.push(Math.floor(Math.random() * 100) + 1);
+  }
+
+  
+  var container = document.getElementById("container");
+  for (var i = 0; i < numeriCasuali.length; i++) {
+    var div = document.createElement("div");
+    div.className = "quadrato";
+    div.textContent = numeriCasuali[i];
+    if (numeriCasuali[i] % 2 === 0) {
+      div.style.backgroundColor = "red";
+    } else {
+      div.style.backgroundColor = "lightblue";
+    }
+    container.appendChild(div);
+  }
+</script>
+</body>
+</html>
+
