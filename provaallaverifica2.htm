@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>replit</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  Hello world
+  <script src="script.js"></script>
+
+function isPrime(n) {
+      let bPrime = true;
+      let factor = 2;
+      while (factor <= n / 2) {
+          if (n % factor === 0) {
+              bPrime = false;
+              break;
+          }
+          factor++;
+      }
+      return bPrime;
+  }
+
+  // Array di numeri consecutivi da 1000 in poi
+  let numbersArray = [];
+  for (let i = 1000; i < 2000; i++) {
+      numbersArray.push(i);
+  }
+
+  // Seleziono il contenitore dei quadrati
+  let container = document.getElementById('container');
+
+  // Ciclo per creare 1000 quadrati e inserire i numeri dall'array
+  for (let i = 0; i < 1000; i++) {
+      let square = document.createElement('div');
+      square.textContent = numbersArray[i];
+
+      // Coloro il quadrato in base alle condizioni date
+      if (numbersArray[i] % 2 === 0) {
+          square.style.backgroundColor = 'darkred';
+      } else {
+          square.style.backgroundColor = 'lightblue';
+      }
+
+      if (numbersArray[i] % 7 === 0) {
+          square.style.backgroundColor = 'lightcoral';
+      }
+
+      if (isPrime(numbersArray[i])) {
+          square.style.backgroundColor = 'yellow';
+      }
+
+      // Aggiungo il quadrato al contenitore
+      container.appendChild(square);
+  }
+
+  // Applico il display flex al contenitore per mettere i quadrati in orizzontale
+  container.style.display = 'flex';
+  container.style.flexWrap = 'wrap
+    </body>
+    </html>
